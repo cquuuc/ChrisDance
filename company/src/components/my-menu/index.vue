@@ -29,6 +29,20 @@
           </el-button>
         </el-tooltip>
       </div>
+      <!-- 显示访问人数 -->
+      <div class="visitor-count">
+        <el-badge :value="formattedCount" class="item" color="green">
+          <el-icon color="#3c8cff"><View /></el-icon>
+        </el-badge>
+
+        <el-button
+          v-if="counterStore.error"
+          @click="counterStore.retry"
+          class="retry-btn"
+        >
+          Reload
+        </el-button>
+      </div>
     </el-menu>
   </div>
 </template>
@@ -39,8 +53,10 @@ import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
 import { Document, Menu } from "@element-plus/icons-vue";
 import type { Component } from "vue";
+import { useCounterStore } from "@/stores/counter"; // 引入计数器存储
 
 const { t, locale } = useI18n();
+const counterStore = useCounterStore(); // 使用计数器存储
 
 type MenuItem = {
   index: string;
@@ -79,6 +95,13 @@ const toggleLanguage = () => {
   locale.value = currentLang.value;
   localStorage.setItem("lang", currentLang.value);
 };
+// 自动获取访问人数
+counterStore.fetch();
+
+// 格式化访问人数
+const formattedCount = computed(() =>
+  counterStore.count === -1 ? "N/A" : counterStore.count.toLocaleString()
+);
 </script>
 
 <style scoped>
@@ -125,5 +148,16 @@ const toggleLanguage = () => {
       margin-right: 0;
     }
   }
+}
+
+.visitor-count {
+  padding: 12px 4px;
+  border-top: 1px solid var(--el-border-color);
+
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 </style>

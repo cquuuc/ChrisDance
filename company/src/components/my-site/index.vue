@@ -55,13 +55,13 @@
         display: activeTab != 'news' ? 'none' : 'flex',
       }"
     >
-      <el-main>
+      <!-- <el-main>
         <iframe
           src="https://opensource.icegl.cn/#/plugins/digitalCity/weather"
           frameborder="0"
           :style="{ width: '90vw', height: '100vh' }"
         ></iframe
-      ></el-main>
+      ></el-main> -->
     </el-container>
 
     <!-- 底部信息 -->
