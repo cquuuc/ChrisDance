@@ -1,7 +1,7 @@
 // stores/counter.ts
 import { defineStore } from "pinia";
 // const URL = "https://counterapi.com/api/18.130.168.92:5173/";
-const URL = "'https://counterapi.com/api/mlj88.top/homepage/increment";
+const URL = "https://counterapi.com/api/mlj88.top/homepage/increment";
 
 export const useCounterStore = defineStore("counter", {
   state: () => ({
