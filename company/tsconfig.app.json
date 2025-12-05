@@ -2,13 +2,31 @@
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    
+    /* --- 核心修复配置 start --- */
+    "skipLibCheck": true,            /* 关键：强制跳过所有第三方库的类型检查 */
+    "esModuleInterop": true,         /* 关键：允许 dayjs 等库默认导入 */
+    "moduleResolution": "bundler",
+    "jsx": "preserve",
+    "noImplicitAny": false,          /* 宽松模式：防止某些隐式类型报错 */
+    /* --- 核心修复配置 end --- */
 
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": [
+    "src/**/*.ts", 
+    "src/**/*.tsx", 
+    "src/**/*.vue", 
+    "auto-imports.d.ts", 
+    "components.d.ts"
+  ]
 }

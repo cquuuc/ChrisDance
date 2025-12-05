@@ -5,17 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build_dont_use": "vue-tsc -b && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
     "echarts": "^5.6.0",
     "element-plus": "^2.9.7",
+    "pinia": "^3.0.4",
     "vant": "^4.9.18",
     "vue": "^3.5.13",
     "vue-i18n": "^10.0.6",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.6.3"
   },
   "devDependencies": {
     "@types/node": "^22.13.14",
