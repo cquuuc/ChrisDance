@@ -1,6 +1,6 @@
 // stores/counter.ts
 import { defineStore } from "pinia";
-const URL ="https://counterapi.com/api/chris-dance.vercel.app/"
+const URL ="https://counterapi.com/api/chris-dance.vercel.app/homepage/increment"
   // "https://counterapi.com/api/ec2-18-130-168-92.eu-west-2.compute.amazonaws.com:5173/homepage/increment";
 // const URL = "https://counterapi.com/api/mlj88.top/homepage/increment";
 

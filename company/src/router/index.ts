@@ -1,6 +1,7 @@
 import {
   createMemoryHistory,
   createRouter,
+  createWebHistory,
   createWebHashHistory,
 } from "vue-router";
 import Home from "@/page/report/index.vue";
@@ -23,7 +24,8 @@ const routes = [
 
 const router = createRouter({
   // history: createMemoryHistory(),
-  history: createWebHashHistory(),
+  // history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 export default router;
