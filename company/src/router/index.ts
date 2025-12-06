@@ -4,7 +4,7 @@ import {
   createWebHistory,
   createWebHashHistory,
 } from "vue-router";
-import Home from "@/page/report/index.vue";
+import Home from "@/page/site/index.vue"
 
 const routes = [
   { path: "/", name: "home", component: Home },
