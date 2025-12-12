@@ -14,7 +14,16 @@
     >
       <div class="container">
         <div class="logo">
-          <img loading="eager" src="@/assets/byte-dance-logo.png" alt="ByteDance" />
+          <img
+            srcset="
+              @/assets/byte-dance-logo-232.webp  300w,
+              @/assets/byte-dance-logo-464.webp  500w,
+              @/assets/byte-dance-logo-696.webp 1000w
+            "
+            loading="eager"
+            src="@/assets/byte-dance-logo.png"
+            alt="ByteDance"
+          />
         </div>
         <el-menu
           mode="horizontal"
@@ -71,6 +80,11 @@
           <!-- Logo列 -->
           <div class="footer-logo">
             <img
+                        srcset="
+              @/assets/byte-dance-logo-232.webp  300w,
+              @/assets/byte-dance-logo-464.webp  500w,
+              @/assets/byte-dance-logo-696.webp 1000w
+            "
               :src="getImageUrl('byte-dance-logo.png')"
               alt="ByteDance"
               class="logo-image"
@@ -133,7 +147,7 @@ defineProps({
   },
 });
 // 在组件中动态引用
-const getImageUrl = name => {
+const getImageUrl = (name) => {
   return new URL(`/src/assets/${name}`, import.meta.url).href;
 };
 
@@ -152,7 +166,7 @@ const loading = ref(true);
 const isLoading = computed(() => loading.value && activeTab.value == "news");
 // 使用计算属性保持响应性
 const currentComponent = computed(() => componentsMap[activeTab.value]);
-const handleSelect = index => {
+const handleSelect = (index) => {
   activeTab.value = index;
   console.log(index);
   loading.value = true; // 在切换选项卡时设置 loading 为 true
@@ -204,7 +218,7 @@ const footerColumns = ref([
 
   .el-icon {
     font-size: 40px;
-    color: #066CFE;
+    color: #0163ef;
     animation: rotate 1s linear infinite;
   }
 }
@@ -343,10 +357,10 @@ const footerColumns = ref([
 
     .contact-item {
       padding: 20px;
-      border-left: 4px solid #066CFE;
+      border-left: 4px solid #0163ef;
 
       a {
-        color: #066CFE;
+        color: #0163ef;
         font-size: 16px;
       }
     }
@@ -364,7 +378,7 @@ const footerColumns = ref([
     transform-origin: center top;
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     height: 60px;
-    background: #066CFE;
+    background: #0163ef;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     width: -webkit-fill-available;
@@ -484,7 +498,7 @@ const footerColumns = ref([
   }
 
   .footer {
-    background: #066CFE;
+    background: #0163ef;
     color: #fff;
     padding: 60px 0;
 
@@ -526,7 +540,7 @@ const footerColumns = ref([
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background: #066CFE;
+    background: #0163ef;
   }
 
   .footer-columns {
@@ -567,7 +581,7 @@ const footerColumns = ref([
             background-color var(--el-transition-duration),
             color var(--el-transition-duration);
           &:hover {
-            color: #066CFE !important;
+            color: #0163ef !important;
             background: #fff;
           }
         }
@@ -587,7 +601,7 @@ const footerColumns = ref([
       a {
         color: inherit;
         &:hover {
-          color: #066CFE;
+          color: #0163ef;
         }
       }
     }

@@ -10,7 +10,12 @@
       </div>
     </div>
     <el-carousel-item v-for="(item, index) in banners" :key="index">
-      <img :src="item.image" :alt="item.title" loading="eager" />
+      <img
+        :srcset="item.srcset"
+        :src="item.image"
+        :alt="item.title"
+        loading="eager"
+      />
     </el-carousel-item>
   </el-carousel>
   <!-- 企业文化板块 -->
@@ -23,7 +28,12 @@
       <el-carousel class="culture-carousel" indicator-position="outside">
         <el-carousel-item v-for="(item, index) in cultureItems" :key="index">
           <div class="culture-card">
-            <img :src="item.image" alt="culture" loading="lazy" />
+            <img
+              :srcset="item.srcset"
+              :src="item.image"
+              alt="culture"
+              loading="lazy"
+            />
             <div class="culture-content">
               <h2>{{ t(item.title) }}</h2>
               <ul>
@@ -48,7 +58,12 @@
           :key="index"
           class="milestone-item"
         >
-          <img :src="event.image" alt="milestone" loading="lazy" />
+          <img
+            :srcset="event.srcset"
+            :src="event.image"
+            alt="milestone"
+            loading="lazy"
+          />
           <div class="milestone-info">
             <p>{{ t(event.date) }}</p>
             <h1>{{ t(event.description) }}</h1>
@@ -74,7 +89,12 @@
     <div class="person">
       <div v-for="i in 3" :key="i">
         <div class="avatar">
-          <el-avatar alt="我的头像" shape="circle" :size="70" :src="getImageUrl('ME.jpg')" />
+          <el-avatar
+            alt="我的头像"
+            shape="circle"
+            :size="70"
+            :src="getImageUrl('ME-232.webp')"
+          />
         </div>
         <p>Chris Chen</p>
         <p>Chairman of the Board</p>
@@ -117,27 +137,35 @@ defineProps({
 });
 
 // 在组件中动态引用
-const getImageUrl = name => {
+const getImageUrl = (name) => {
   return new URL(`/src/assets/${name}`, import.meta.url).href;
 };
 
 const banners = ref([
   {
     image: getImageUrl("banner0.png"),
-      srcset:`
-    ${getImageUrl("banner0.png")} 81w,
-    /assets/logo-medium.png 162w,
-    /assets/logo-large.png 324w `,
+    srcset: `
+    ${getImageUrl("banner0-232.webp")} 300w,
+     ${getImageUrl("banner0-464.webp")} 500w,
+     ${getImageUrl("banner0-696.webp")} 1000w`,
     title: "激发创造，丰富生活",
     description: "通过技术提升全球人们的生活品质",
   },
   {
     image: getImageUrl("banner1.png"),
+    srcset: `
+    ${getImageUrl("banner1-232.webp")} 300w,
+     ${getImageUrl("banner1-464.webp")} 500w,
+     ${getImageUrl("banner1-696.webp")} 1000w`,
     title: "激发创造，丰富生活",
     description: "通过技术提升全球人们的生活品质",
   },
   {
     image: getImageUrl("banner2.png"),
+    srcset: `
+    ${getImageUrl("banner2-232.webp")} 300w,
+     ${getImageUrl("banner2-464.webp")} 500w,
+     ${getImageUrl("banner2-696.webp")} 1000w`,
     title: "激发创造，丰富生活",
     description: "通过技术提升全球人们的生活品质",
   },
@@ -145,21 +173,45 @@ const banners = ref([
 const cultureItems = ref([
   {
     image: getImageUrl("culture1.jpg"),
+    srcset: `
+    ${getImageUrl("culture1-232.webp")} 300w,
+     ${getImageUrl("culture1-464.webp")} 500w,
+     ${getImageUrl("culture1-696.webp")} 700w
+     ${getImageUrl("culture1-928.webp")} 1000w
+     `,
     title: "common.title",
     points: ["common.txt1"],
   },
   {
     image: getImageUrl("culture1.jpg"),
+    srcset: `
+    ${getImageUrl("culture1-232.webp")} 300w,
+     ${getImageUrl("culture1-464.webp")} 500w,
+     ${getImageUrl("culture1-696.webp")} 700w
+     ${getImageUrl("culture1-928.webp")} 1000w
+     `,
     title: "common.title",
     points: ["common.txt2"],
   },
   {
     image: getImageUrl("culture1.jpg"),
+    srcset: `
+    ${getImageUrl("culture1-232.webp")} 300w,
+     ${getImageUrl("culture1-464.webp")} 500w,
+     ${getImageUrl("culture1-696.webp")} 700w
+     ${getImageUrl("culture1-928.webp")} 1000w
+     `,
     title: "common.title",
     points: ["common.txt3"],
   },
   {
     image: getImageUrl("culture1.jpg"),
+    srcset: `
+    ${getImageUrl("culture1-232.webp")} 300w,
+     ${getImageUrl("culture1-464.webp")} 500w,
+     ${getImageUrl("culture1-696.webp")} 700w
+     ${getImageUrl("culture1-928.webp")} 1000w
+     `,
     title: "common.title",
     points: ["common.txt4"],
   },
@@ -170,30 +222,35 @@ const milestones = ref([
     date: "common.date",
     description: "common.datedescription",
     image: getImageUrl("dsj-1.png"),
+    srcset: `
+    ${getImageUrl("dsj-232.webp")} 300w,
+     ${getImageUrl("dsj-464.webp")} 500w,
+`,
   },
   // 补充其他大事记
 ]);
 
 const miniLine = ref([
   {
-    image: getImageUrl("dsj-logo1.png"),
-    alt:'dsj1'
+    image: getImageUrl("dsj-logo1-232.webp"),
+
+    alt: "dsj1",
   },
   {
     image: getImageUrl("dsj-logo2.png"),
-    alt:'dsj2'
+    alt: "dsj2",
   },
   {
     image: getImageUrl("dsj-logo3.png"),
-    alt:'dsj3'
+    alt: "dsj3",
   },
   {
     image: getImageUrl("dsj-logo4.png"),
-    alt:'dsj4'
+    alt: "dsj4",
   },
   {
     image: getImageUrl("dsj-logo5.png"),
-    alt:'dsj5'
+    alt: "dsj5",
   },
 ]);
 const contacts = ref([
@@ -348,10 +405,10 @@ const contacts = ref([
 
     .contact-item {
       padding: 20px;
-      border-left: 4px solid #066CFE;
+      border-left: 4px solid #0163ef;
 
       a {
-        color: #066CFE;
+        color: #0163ef;
         font-size: 16px;
       }
     }
@@ -369,7 +426,7 @@ const contacts = ref([
     transform-origin: center top;
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     height: 60px;
-    background: #066CFE;
+    background: #0163ef;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     width: -webkit-fill-available;
@@ -489,7 +546,7 @@ const contacts = ref([
   }
 
   .footer {
-    background: #066CFE;
+    background: #0163ef;
     color: #fff;
     padding: 60px 0;
 
@@ -531,7 +588,7 @@ const contacts = ref([
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background: #066CFE;
+    background: #0163ef;
   }
 
   .footer-columns {
@@ -572,7 +629,7 @@ const contacts = ref([
             background-color var(--el-transition-duration),
             color var(--el-transition-duration);
           &:hover {
-            color: #066CFE !important;
+            color: #0163ef !important;
             background: #fff;
           }
         }
@@ -592,7 +649,7 @@ const contacts = ref([
       a {
         color: inherit;
         &:hover {
-          color: #066CFE;
+          color: #0163ef;
         }
       }
     }

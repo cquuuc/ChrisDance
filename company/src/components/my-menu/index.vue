@@ -32,7 +32,7 @@
       <!-- 显示访问人数 -->
       <div class="visitor-count">
         <el-badge :value="formattedCount" class="item" color="green">
-          <el-icon color="#066CFE" size="30"><View /></el-icon>
+          <el-icon color="#0163EF" size="30"><View /></el-icon>
         </el-badge>
 
         <el-button
