@@ -23,7 +23,7 @@
       <el-carousel class="culture-carousel" indicator-position="outside">
         <el-carousel-item v-for="(item, index) in cultureItems" :key="index">
           <div class="culture-card">
-            <img :src="item.image" alt="culture" />
+            <img :src="item.image" alt="culture" loading="lazy" />
             <div class="culture-content">
               <h2>{{ t(item.title) }}</h2>
               <ul>
@@ -48,7 +48,7 @@
           :key="index"
           class="milestone-item"
         >
-          <img :src="event.image" alt="milestone" />
+          <img :src="event.image" alt="milestone" loading="lazy" />
           <div class="milestone-info">
             <p>{{ t(event.date) }}</p>
             <h1>{{ t(event.description) }}</h1>
@@ -62,6 +62,8 @@
             v-for="(contact, index) in miniLine"
             :key="index"
             :src="contact.image"
+            :alt="contact.alt"
+            loading="lazy"
           />
         </div>
       </div>
@@ -72,7 +74,7 @@
     <div class="person">
       <div v-for="i in 3" :key="i">
         <div class="avatar">
-          <el-avatar shape="circle" :size="70" src="src/assets/ME.jpg" />
+          <el-avatar shape="circle" :size="70" :src="getImageUrl('ME.jpg')" />
         </div>
         <p>Chris Chen</p>
         <p>Chairman of the Board</p>
@@ -122,6 +124,10 @@ const getImageUrl = name => {
 const banners = ref([
   {
     image: getImageUrl("banner0.png"),
+      srcset:`
+    ${getImageUrl("banner0.png")} 81w,
+    /assets/logo-medium.png 162w,
+    /assets/logo-large.png 324w `,
     title: "激发创造，丰富生活",
     description: "通过技术提升全球人们的生活品质",
   },
@@ -171,18 +177,23 @@ const milestones = ref([
 const miniLine = ref([
   {
     image: getImageUrl("dsj-logo1.png"),
+    alt:'dsj1'
   },
   {
     image: getImageUrl("dsj-logo2.png"),
+    alt:'dsj2'
   },
   {
     image: getImageUrl("dsj-logo3.png"),
+    alt:'dsj3'
   },
   {
     image: getImageUrl("dsj-logo4.png"),
+    alt:'dsj4'
   },
   {
     image: getImageUrl("dsj-logo5.png"),
+    alt:'dsj5'
   },
 ]);
 const contacts = ref([

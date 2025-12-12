@@ -14,7 +14,7 @@
     >
       <div class="container">
         <div class="logo">
-          <img src="@/assets/byte-dance-logo.png" alt="ByteDance" />
+          <img loading="eager" src="@/assets/byte-dance-logo.png" alt="ByteDance" />
         </div>
         <el-menu
           mode="horizontal"
@@ -74,6 +74,7 @@
               :src="getImageUrl('byte-dance-logo.png')"
               alt="ByteDance"
               class="logo-image"
+              loading="eager"
             />
           </div>
 

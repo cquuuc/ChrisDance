@@ -5,10 +5,22 @@ import pxtorem from "postcss-pxtorem";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    ViteImageOptimizer({
+      png: {
+        quality: 80, // 压缩质量 80%，肉眼看不出区别
+      },
+      jpeg: {
+        quality: 80,
+      },
+      webp: {
+        quality: 80,
+      },
+    }),
     AutoImport({
       resolvers: [ElementPlusResolver()],
     }),

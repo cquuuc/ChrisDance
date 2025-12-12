@@ -18,7 +18,9 @@
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^10.0.0",
     "imagemin-svgo": "^11.0.1",
+    "imagemin-webp": "^8.0.0",
     "pinia": "^3.0.4",
+    "sharp": "^0.34.5",
     "vant": "^4.9.18",
     "vue": "^3.5.13",
     "vue-i18n": "^10.0.6",
@@ -35,6 +37,8 @@
     "unplugin-auto-import": "^19.1.2",
     "unplugin-vue-components": "^28.4.1",
     "vite": "^6.2.0",
+    "vite-plugin-image-optimizer": "^2.0.3",
+    "vite-plugin-sitemap": "^0.8.2",
     "vue-tsc": "^2.2.4"
   }
 }

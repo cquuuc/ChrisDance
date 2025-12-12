@@ -1,8 +1,7 @@
 // stores/counter.ts
 import { defineStore } from "pinia";
-const URL ="https://counterapi.com/api/chris-dance.vercel.app/homepage/increment"
-  // "https://counterapi.com/api/ec2-18-130-168-92.eu-west-2.compute.amazonaws.com:5173/homepage/increment";
-// const URL = "https://counterapi.com/api/mlj88.top/homepage/increment";
+const URL =
+  "https://counterapi.com/api/chris-dance.vercel.app/homepage/increment";
 
 export const useCounterStore = defineStore("counter", {
   state: () => ({
@@ -19,7 +18,7 @@ export const useCounterStore = defineStore("counter", {
         const response = await fetch(URL, {
           method: "GET",
           cache: "no-cache",
-          signal: AbortSignal.timeout(5000), // 5秒超时
+          signal: AbortSignal.timeout(10000), // 5秒超时
         });
 
         if (!response.ok) throw new Error("请求失败");
