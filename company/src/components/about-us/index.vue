@@ -74,7 +74,7 @@
     <div class="person">
       <div v-for="i in 3" :key="i">
         <div class="avatar">
-          <el-avatar shape="circle" :size="70" :src="getImageUrl('ME.jpg')" />
+          <el-avatar alt="我的头像" shape="circle" :size="70" :src="getImageUrl('ME.jpg')" />
         </div>
         <p>Chris Chen</p>
         <p>Chairman of the Board</p>
