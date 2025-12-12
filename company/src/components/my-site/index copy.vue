@@ -433,10 +433,10 @@ const footerColumns = ref([
 
     .contact-item {
       padding: 20px;
-      border-left: 4px solid #3c8cff;
+      border-left: 4px solid #066CFE;
 
       a {
-        color: #3c8cff;
+        color: #066CFE;
         font-size: 16px;
       }
     }
@@ -454,7 +454,7 @@ const footerColumns = ref([
     transform-origin: center top;
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     height: 60px;
-    background: #3c8cff;
+    background: #066CFE;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     width: -webkit-fill-available;
@@ -574,7 +574,7 @@ const footerColumns = ref([
   }
 
   .footer {
-    background: #3c8cff;
+    background: #066CFE;
     color: #fff;
     padding: 60px 0;
 
@@ -616,7 +616,7 @@ const footerColumns = ref([
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background: #3c8cff;
+    background: #066CFE;
   }
 
   .footer-columns {
@@ -657,7 +657,7 @@ const footerColumns = ref([
             background-color var(--el-transition-duration),
             color var(--el-transition-duration);
           &:hover {
-            color: #3c8cff !important;
+            color: #066CFE !important;
             background: #fff;
           }
         }
@@ -677,7 +677,7 @@ const footerColumns = ref([
       a {
         color: inherit;
         &:hover {
-          color: #3c8cff;
+          color: #066CFE;
         }
       }
     }
