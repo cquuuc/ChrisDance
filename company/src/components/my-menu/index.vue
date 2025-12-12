@@ -12,6 +12,7 @@
         :key="item.index"
         :index="item.index"
         role="menuitem"
+        :aria-label="item.label"
       >
         <el-icon><component :is="item.icon" /></el-icon>
         <template #title>{{ item.label }}</template>
@@ -44,7 +45,7 @@
       <div class="visitor-count">
         <!-- 给图标加名字 -->
         <el-badge :value="formattedCount" class="item" color="green">
-          <span aria-label="访问量统计">
+          <span>
             <el-icon color="#0163EF" size="30"><View /></el-icon>
           </span>
         </el-badge>
